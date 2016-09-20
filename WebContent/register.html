@@ -1,0 +1,64 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="mvscreen">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Register Form</title>
+<link rel="stylesheet" href="style.css">
+
+<script>
+	function validateForm() {
+    	 var password = document.forms["login"]["password"].value;
+        	    var minMaxLength = /^[\s\S]{2,32}$/,
+        	        upper = /[A-Z]/,
+        	        lower = /[a-z]/,
+        	        number = /[0-9]/,
+        	        special = /[ !"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~]/;
+
+        	    if (minMaxLength.test(password) &&
+        	        upper.test(password) &&
+        	        lower.test(password) &&
+        	        number.test(password) &&
+        	        special.test(password) ) {
+        	    	alert("Passed");
+        	    	return true;
+        	    }
+        	    alert("Password criteri :  2-8 char, 1 upper, 1 lower , 1  number and 1 special character");
+        	    return false;
+      }
+	
+</script>
+</head>
+<body>
+
+<section class="signup form"></section>
+<form action="register.jsp" method ="get" >
+<ul>
+				<li>
+					<label for="firstname">First name:</label>
+					<input type="text" name="first name" placeholder="yourfirstname" required autofocus required>
+				</li>
+				
+					<li>
+					<label for="last name">Last name:</label>
+					<input type="text" name="last name" placeholder="last name"  autofocus required></li>
+					<li>
+					<label for="usermail">User name:</label>
+					<input type="email" name="usermail" placeholder="yourname@email.com" required>
+				</li>
+				<li>
+					<label for="password">Password:</label>
+					<input type="password" name="password" placeholder="password"  autofocus required></li>
+					<li>
+					<label for="password">Retype Password:</label>
+					<input type="password" name="password" placeholder="password"  autofocus required></li>
+				<li>
+					<input type="submit" value="sign up">
+				</li>
+			</ul>
+
+</form>
+
+ 
+</body>
+</html>

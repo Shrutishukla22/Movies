@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html class="mvscreen">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>login page</title>
+<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<script>
+	function validateForm() {
+    	 var password = document.forms["login"]["password"].value;
+        	    var minMaxLength = /^[\s\S]{2,32}$/,
+        	        upper = /[A-Z]/,
+        	        lower = /[a-z]/,
+        	        number = /[0-9]/,
+        	        special = /[ !"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~]/;
+
+        	    if (minMaxLength.test(password) &&
+        	        upper.test(password) &&
+        	        lower.test(password) &&
+        	        number.test(password) &&
+        	        special.test(password) ) {
+        	    	alert("Passed");
+        	    	return true;
+        	    }
+        	    alert("Password criteri :  2-8 char, 1 upper, 1 lower , 1  number and 1 special character");
+        	    return false;
+      }
+	
+	</script>
+</head>
+<body>
+  <section class ="loginform cf">
+  <form action="movies.jsp" method ="get">
+  <h1>Login Page</h1>
+  <ul>
+  <li>
+     <label for ="usermail">User name</label>
+     <input type="email" name="usermail" placeholder="yourname@email.com" required>
+  </li>
+  <li>
+     <label for ="password">Password</label>
+     <input type="password" name="password" placeholder="password" required>
+   </li>
+   <li>
+     <input type="submit" value="login">
+    </li>
+  </ul>
+  <ul>
+   <li>
+     <label for ="link">Not a Member</label>
+     <a href="register.html"> Sign Up</a>
+     </li>
+   </ul>
+</form>
+</section>
+
+</body>
+</html>
